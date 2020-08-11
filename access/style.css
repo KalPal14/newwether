@@ -1,0 +1,225 @@
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/*===========================================*/
+h1, h2, h3, h4, p{
+  font-family: Roboto;
+}
+li {
+  list-style-type: none;
+}
+body {
+  background-color: lightblue;
+}
+.dark_blok {
+  display: none;
+  z-index: 5;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(131, 131, 131, 0.411);
+}
+.header {
+   height: 60px;
+   background-color: #171f23;
+   padding: 0 13%;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+}
+.logo {
+  color: #e7e7e7;
+}
+.search_container {
+  position: relative;
+  z-index: 10;
+}
+.search {
+  border-radius: 12px;
+  width: 320px;
+  height: 35px;
+}
+.search:focus {
+   outline: none; 
+  }
+  .cityList {
+    width: 318px;
+    position: absolute;
+    top: 40px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    max-height: 350px;
+    scrollbar-color: #6e7e86 #ced7e0; 
+    scrollbar-width: 10px;
+    overflow: auto;
+  }
+  .cityList::-webkit-scrollbar {
+    width: 10px; 
+    height: 10px; 
+    background-color: #ced7e0;
+    border-radius: 8px;
+}
+.cityList::-webkit-scrollbar-thumb {
+  background-color: #6e7e86;
+  border-radius: 8px;
+}
+  .cityList ul {
+    padding-left: 0;
+    margin: 0;
+  }
+  .city_name {
+    height: 35px;
+    border-top: 1px solid rgb(97, 96, 96);
+    padding-left: 8px;
+    padding-top: 8px;
+    font-size: 16px;
+    font-family: Roboto;
+    color: rgb(101, 126, 151);
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .city_name:hover {
+    background-color: khaki;
+  }
+  .city_name:first-child {
+    border-top: none;
+  }
+  /*======================================================
+  ======================================================*/
+
+  .weather {
+    margin: 0 auto;
+    margin-top: 30px;
+    background-color: rgb(230, 230, 230);
+    width: 40%;
+    height: 320px;
+    border-radius: 20px;
+    box-shadow: 0 0 12px 0 rgba(0,0,0,.2);
+    padding: 0 25px;
+  }
+  .weather_city_name {
+    font-size: 26px;
+    letter-spacing: 2.4px;
+    color: rgb(61, 60, 60);
+    padding-top: 30px;
+  }
+  .weather_date {
+    color: rgb(97, 91, 91);
+    margin-top: 10px;
+  }
+  .weather_condition {
+    color: rgb(97, 91, 91);
+  }
+  .weather_moinContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .weather_container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .weather_temp {
+    font-size: 30px;
+    margin-left: 5px;
+    color: rgb(61, 60, 60);
+
+  }
+  span {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: rgb(61, 60, 60);
+
+  }
+  .feels_like {
+    color: rgb(97, 91, 91);
+    margin-top: 15px;
+    font-weight: 700;
+  }
+  .weather_additionally {
+ margin-right: 50px;
+ margin-top: 20px;
+  }
+  .weather_additionally p {
+ font-weight: 700;
+ color: rgb(97, 91, 91);
+  }

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Weather</title>
+   <link href="access/style.css" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+   <script src="access/js/showYourCity.js"></script>
+   <script>
+      var cicitiesListArr = [];
+
+      async function getCitiList() {
+         let request = await fetch('current.city.list.min.json');
+         let citiesListJSON = await request.json();
+
+
+         for (let i = 0; i < citiesListJSON.length; i++) {
+            cicitiesListArr.push(citiesListJSON[i].name + ', ' + citiesListJSON[i].country + ' ___ ' + citiesListJSON[i].id);
+         }
+
+      } getCitiList();
+   </script>
+</head>
+
+<body>
+   <div class="dark_blok"></div>
+   <header class="header">
+      <h1 class="logo">Weather</h1>
+      <div class="search_container">
+         <input type="text" placeholder='Enter city or country name through a space' class="search" id='searchInput'>
+
+         <div class="cityList" id='cityList'>
+            <ul id='cityListUl'>
+            </ul>
+         </div>
+      </div>
+
+      <script src="access/js/findСities.js"></script>
+   </header>
+
+   <script src="access/js/showWether.js"></script>
+
+   <section class="weather">
+      <h1 class="weather_city_name" id='cityNameH1'></h1>
+      <h4 class="weather_date" id='dateH4'></h4>
+      <h4 class="weather_condition" id='conditionH4'></h4>
+      <div class="weather_moinContainer">
+         <div class="weather_main">
+            <div class="weather_container">
+               <img src="" alt="Иконка погоды" id='weatherImg'>
+               <h1 class="weather_temp" id='tempH1'></h1><span>C</span>
+            </div>
+            <p class="feels_like" id='feelsLikeElem'></p>
+         </div>
+         <div class="weather_additionally">
+            <p id='windElem'></p>
+            <p id='humidityElem'></p>
+            <p id='pressureElem'></p>
+         </div>
+      </div>
+   </section>
+</body>
+
+</html>
